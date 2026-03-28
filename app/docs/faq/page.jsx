@@ -2,7 +2,7 @@ import CodeBlock from '../../components/CodeBlock'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'FAQ - Larahammer',
+  title: 'FAQ — Larahammer',
   description: 'Frequently asked questions and troubleshooting for Larahammer Generator',
 }
 
@@ -46,149 +46,152 @@ export default function FAQ() {
     },
     {
       q: "What testing framework does Larahammer use?",
-      a: "Larahammer generates tests using Laravel's PHPUnit testing framework (pest is also compatible)."
+      a: "Larahammer generates tests using Laravel's PHPUnit testing framework (Pest is also compatible)."
     }
   ]
 
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 docs-content">
       <h1>Frequently Asked Questions</h1>
-      <p className="text-gray-600 text-lg mb-8">
+      <p className="text-zinc-400 text-lg mb-10">
         Find answers to common questions about Larahammer Generator.
       </p>
 
-      <div className="space-y-6">
+      <div className="space-y-3">
         {faqs.map((faq, idx) => (
-          <details key={idx} className="border border-gray-200 rounded-lg p-6 group cursor-pointer hover:bg-gray-50 transition-colors">
-            <summary className="font-semibold text-lg flex justify-between items-center list-none">
+          <details key={idx} className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 group cursor-pointer hover:border-zinc-700 transition-colors">
+            <summary className="font-semibold text-base flex justify-between items-center list-none text-zinc-200">
               <span>{faq.q}</span>
-              <span className="text-xl group-open:rotate-180 transition-transform">▶</span>
+              <span className="text-zinc-600 text-sm ml-4 flex-shrink-0 group-open:rotate-90 transition-transform">&#9654;</span>
             </summary>
-            <p className="text-gray-600 mt-4 ml-4">{faq.a}</p>
+            <p className="text-zinc-500 text-sm mt-4 mb-0 leading-relaxed">{faq.a}</p>
           </details>
         ))}
       </div>
 
-      <h2 className="mt-12">Troubleshooting</h2>
+      <h2>Troubleshooting</h2>
 
-      <div className="space-y-8 my-8">
-        <div className="border-l-4 border-red-600 pl-6">
-          <h3 className="text-xl font-bold mb-2">❌ "Namespace not found" error</h3>
-          <p className="text-gray-600 mb-4">Make sure to run composer install and check that the package is properly registered.</p>
-          <CodeBlock code="composer install && php artisan list" language="bash" />
-        </div>
-
-        <div className="border-l-4 border-red-600 pl-6">
-          <h3 className="text-xl font-bold mb-2">❌ Migration not found after generation</h3>
-          <p className="text-gray-600 mb-4">Make sure you ran the migration and check the database/migrations folder:</p>
-          <CodeBlock code="php artisan migrate && php artisan migrate:status" language="bash" />
-        </div>
-
-        <div className="border-l-4 border-red-600 pl-6">
-          <h3 className="text-xl font-bold mb-2">❌ Views not showing after generation</h3>
-          <p className="text-gray-600 mb-4">Check that routes are properly registered and the app.blade.php layout exists:</p>
-          <CodeBlock code="php artisan route:list | grep -i product" language="bash" />
-        </div>
-
-        <div className="border-l-4 border-red-600 pl-6">
-          <h3 className="text-xl font-bold mb-2">❌ Filament resource not appearing</h3>
-          <p className="text-gray-600 mb-4">Make sure Filament is installed and the resource is registered in your AdminPanelProvider:</p>
-          <CodeBlock code="composer require filament/filament" language="bash" />
-        </div>
-
-        <div className="border-l-4 border-red-600 pl-6">
-          <h3 className="text-xl font-bold mb-2">❌ API routes returning 404</h3>
-          <p className="text-gray-600 mb-4">Check that API routes are properly registered in routes/api.php and middleware is applied:</p>
-          <CodeBlock code="php artisan route:list --path=api" language="bash" />
-        </div>
-
-        <div className="border-l-4 border-red-600 pl-6">
-          <h3 className="text-xl font-bold mb-2">❌ Tests failing after generation</h3>
-          <p className="text-gray-600 mb-4">Ensure your database is set up for testing and migrations run:</p>
-          <CodeBlock code="php artisan test" language="bash" />
-        </div>
+      <div className="space-y-4 my-8">
+        {[
+          {
+            title: '"Namespace not found" error',
+            desc: 'Make sure to run composer install and check that the package is properly registered.',
+            code: 'composer install && php artisan list'
+          },
+          {
+            title: 'Migration not found after generation',
+            desc: 'Make sure you ran the migration and check the database/migrations folder:',
+            code: 'php artisan migrate && php artisan migrate:status'
+          },
+          {
+            title: 'Views not showing after generation',
+            desc: 'Check that routes are properly registered and the app.blade.php layout exists:',
+            code: 'php artisan route:list | grep -i product'
+          },
+          {
+            title: 'Filament resource not appearing',
+            desc: 'Make sure Filament is installed and the resource is registered in your AdminPanelProvider:',
+            code: 'composer require filament/filament'
+          },
+          {
+            title: 'API routes returning 404',
+            desc: 'Check that API routes are properly registered in routes/api.php and middleware is applied:',
+            code: 'php artisan route:list --path=api'
+          },
+          {
+            title: 'Tests failing after generation',
+            desc: 'Ensure your database is set up for testing and migrations run:',
+            code: 'php artisan test'
+          }
+        ].map((item, idx) => (
+          <div key={idx} className="border-l-2 border-red-500/50 pl-6">
+            <h3 className="text-base font-semibold mb-2 text-zinc-200">{item.title}</h3>
+            <p className="text-zinc-500 text-sm mb-3">{item.desc}</p>
+            <CodeBlock code={item.code} language="bash" />
+          </div>
+        ))}
       </div>
 
-      <h2>Performance Questions</h2>
+      <h2>Performance</h2>
 
-      <div className="space-y-6 my-8">
-        <div className="border border-gray-200 rounded-lg p-6">
-          <h3 className="font-bold text-lg mb-2">⚡ How long does generation take?</h3>
-          <p className="text-gray-600">
+      <div className="space-y-3 my-8">
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+          <h3 className="font-semibold text-base mb-2 text-white">How long does generation take?</h3>
+          <p className="text-zinc-500 text-sm mb-0">
             Generation typically takes less than 1 second. The --all flag generates 80+ files but still completes in under 2 seconds.
           </p>
         </div>
 
-        <div className="border border-gray-200 rounded-lg p-6">
-          <h3 className="font-bold text-lg mb-2">📦 Will generated code impact performance?</h3>
-          <p className="text-gray-600">
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+          <h3 className="font-semibold text-base mb-2 text-white">Will generated code impact performance?</h3>
+          <p className="text-zinc-500 text-sm mb-0">
             No. Generated code follows Laravel best practices and has zero performance impact. Generated models use appropriate indexes in migrations.
           </p>
         </div>
 
-        <div className="border border-gray-200 rounded-lg p-6">
-          <h3 className="font-bold text-lg mb-2">🔄 Can I regenerate a model?</h3>
-          <p className="text-gray-600">
-            Yes. Use --force to overwrite existing code. It's safe to regenerate - existing data won't be affected. Just re-run migrations if the schema changed.
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+          <h3 className="font-semibold text-base mb-2 text-white">Can I regenerate a model?</h3>
+          <p className="text-zinc-500 text-sm mb-0">
+            Yes. Use --force to overwrite existing code. It's safe to regenerate — existing data won't be affected. Just re-run migrations if the schema changed.
           </p>
         </div>
       </div>
 
       <h2>Getting Help</h2>
       
-      <div className="mt-8 grid md:grid-cols-2 gap-6">
-        <div className="border border-blue-200 rounded-lg p-6 bg-blue-50">
-          <h3 className="font-bold text-lg mb-2">🐙 GitHub Issues</h3>
-          <p className="text-gray-600 mb-4">Found a bug? Report it on GitHub:</p>
+      <div className="mt-8 grid md:grid-cols-2 gap-4">
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+          <h3 className="font-semibold text-base mb-2 text-white">GitHub Issues</h3>
+          <p className="text-zinc-500 text-sm mb-3">Found a bug? Report it on GitHub.</p>
           <a 
             href="https://github.com/larahammer/generator/issues" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 font-semibold"
+            className="text-blue-400 hover:text-blue-300 text-sm font-medium no-underline"
           >
-            Report an Issue →
+            Report an Issue &rarr;
           </a>
         </div>
 
-        <div className="border border-green-200 rounded-lg p-6 bg-green-50">
-          <h3 className="font-bold text-lg mb-2">📚 Documentation</h3>
-          <p className="text-gray-600 mb-4">Check out our comprehensive docs:</p>
-          <Link href="/docs/api-reference" className="text-green-600 hover:text-green-800 font-semibold">
-            API Reference →
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+          <h3 className="font-semibold text-base mb-2 text-white">Documentation</h3>
+          <p className="text-zinc-500 text-sm mb-3">Check out our comprehensive docs.</p>
+          <Link href="/docs/api-reference" className="text-blue-400 hover:text-blue-300 text-sm font-medium no-underline">
+            API Reference &rarr;
           </Link>
         </div>
 
-        <div className="border border-purple-200 rounded-lg p-6 bg-purple-50">
-          <h3 className="font-bold text-lg mb-2">📖 Source Code</h3>
-          <p className="text-gray-600 mb-4">Explore the package source:</p>
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+          <h3 className="font-semibold text-base mb-2 text-white">Source Code</h3>
+          <p className="text-zinc-500 text-sm mb-3">Explore the package source.</p>
           <a 
             href="https://github.com/larahammer/generator" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-purple-600 hover:text-purple-800 font-semibold"
+            className="text-blue-400 hover:text-blue-300 text-sm font-medium no-underline"
           >
-            View on GitHub →
+            View on GitHub &rarr;
           </a>
         </div>
 
-        <div className="border border-orange-200 rounded-lg p-6 bg-orange-50">
-          <h3 className="font-bold text-lg mb-2">📦 Packagist</h3>
-          <p className="text-gray-600 mb-4">Install and version history:</p>
+        <div className="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6">
+          <h3 className="font-semibold text-base mb-2 text-white">Packagist</h3>
+          <p className="text-zinc-500 text-sm mb-3">Install and version history.</p>
           <a 
             href="https://packagist.org/packages/larahammer/generator" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-orange-600 hover:text-orange-800 font-semibold"
+            className="text-blue-400 hover:text-blue-300 text-sm font-medium no-underline"
           >
-            View on Packagist →
+            View on Packagist &rarr;
           </a>
         </div>
       </div>
 
-      <div className="mt-12 p-6 bg-gradient-to-r from-blue-50 to-blue-100 rounded-lg border border-blue-200">
-        <h3 className="font-bold text-lg mb-2">💬 Found the answer?</h3>
-        <p className="text-gray-700">
-          Great! Now check out the <Link href="/docs/getting-started" className="text-blue-600 hover:text-blue-800 font-semibold">Getting Started</Link> guide 
+      <div className="mt-12 p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl">
+        <h3 className="font-semibold text-base mb-2 text-white">Ready to start?</h3>
+        <p className="text-zinc-500 text-sm mb-0">
+          Check out the <Link href="/docs/getting-started" className="text-blue-400 hover:text-blue-300 font-medium no-underline">Getting Started</Link> guide 
           to scaffold your first project.
         </p>
       </div>

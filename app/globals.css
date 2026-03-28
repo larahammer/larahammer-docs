@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Poppins:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   @apply m-0 p-0 box-border;
@@ -9,196 +13,33 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-900 font-sans;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  @apply bg-zinc-950 text-zinc-100 antialiased;
 }
 
-code {
-  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono text-pink-600;
-}
-
-pre {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-4;
-}
-
-pre code {
-  @apply bg-transparent p-0 text-gray-100 text-sm;
-}
+/* ── Typography ── */
 
 h1 {
-  font-family: 'Poppins', sans-serif;
-  @apply text-5xl md:text-7xl font-black mb-6 tracking-tight;
+  font-family: 'JetBrains Mono', monospace;
+  @apply text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-none mb-6;
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
-  @apply text-4xl md:text-5xl font-bold mb-4;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse-scale {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(59, 130, 246, 0.6);
-  }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.animate-slide-in-down {
-  animation: slideInDown 0.6s ease-out forwards;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-scale {
-  animation: pulse-scale 2s ease-in-out infinite;
-}
-
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
-}
-
-.hero-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-gradient::before {
-  content: '';
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  top: -100px;
-  right: -100px;
-  animation: float 6s ease-in-out infinite;
-}
-
-.hero-gradient::after {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 50%;
-  bottom: -80px;
-  left: 10%;
-  animation: float 8s ease-in-out infinite;
-}
-
-.feature-card {
-  @apply bg-white rounded-2xl p-8 shadow-lg border border-gray-100 transition-all duration-300;
-  animation: fadeInUp 0.6s ease-out forwards;
-}
-
-.feature-card:nth-child(1) { animation-delay: 0.1s; }
-.feature-card:nth-child(2) { animation-delay: 0.2s; }
-.feature-card:nth-child(3) { animation-delay: 0.3s; }
-.feature-card:nth-child(4) { animation-delay: 0.4s; }
-.feature-card:nth-child(5) { animation-delay: 0.5s; }
-.feature-card:nth-child(6) { animation-delay: 0.6s; }
-
-.feature-card:hover {
-  @apply shadow-2xl border-blue-200;
-  transform: translateY(-8px);
-}
-
-.feature-card .emoji {
-  @apply text-5xl mb-4 inline-block;
-  animation: float 4s ease-in-out infinite;
-}
-
-.btn {
-  @apply px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 inline-block;
-}
-
-.btn-primary {
-  @apply bg-gradient-to-r from-blue-600 to-blue-700 text-white;
-  animation: glow 2s ease-in-out infinite;
-}
-
-.btn-primary:hover {
-  @apply from-blue-700 to-blue-800 shadow-2xl;
-  transform: translateY(-2px);
-}
-
-.btn-secondary {
-  @apply bg-white text-blue-600 border-2 border-blue-600;
-}
-
-.btn-secondary:hover {
-  @apply bg-blue-50 shadow-lg;
-  transform: translateY(-2px);
-}
-
-section {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
-}
-
-section:nth-of-type(1) { animation-delay: 0s; }
-section:nth-of-type(2) { animation-delay: 0.2s; }
-section:nth-of-type(3) { animation-delay: 0.4s; }
-section:nth-of-type(4) { animation-delay: 0.6s; }
-
-h2 {
-  @apply text-3xl font-bold my-6 pt-8;
+  font-family: 'Inter', sans-serif;
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6;
 }
 
 h3 {
-  @apply text-2xl font-semibold my-4;
+  font-family: 'Inter', sans-serif;
+  @apply text-xl md:text-2xl font-semibold tracking-tight mb-3;
 }
 
 p {
-  @apply mb-4 leading-relaxed;
+  @apply mb-4 leading-relaxed text-zinc-400;
+}
+
+a {
+  @apply text-blue-400 hover:text-blue-300 no-underline transition-colors duration-200;
 }
 
 ul, ol {
@@ -206,53 +47,146 @@ ul, ol {
 }
 
 li {
-  @apply mb-2;
+  @apply mb-2 text-zinc-400;
 }
 
-a {
-  @apply text-blue-600 hover:text-blue-800 underline;
+strong {
+  @apply text-zinc-200 font-semibold;
+}
+
+/* ── Code ── */
+
+code {
+  @apply bg-zinc-800/80 px-2 py-0.5 rounded text-sm font-mono text-blue-300 border border-zinc-700/50;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+pre {
+  @apply bg-zinc-900 text-zinc-300 p-5 rounded-xl overflow-x-auto my-4 border border-zinc-800;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+pre code {
+  @apply bg-transparent p-0 text-zinc-300 text-sm border-0;
+}
+
+/* ── Hero ── */
+
+.hero-gradient {
+  background: #0a0a0a;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12), transparent);
+  pointer-events: none;
+}
+
+/* ── Feature Cards ── */
+
+.feature-card {
+  @apply bg-zinc-900/50 rounded-xl p-8 border border-zinc-800 transition-all duration-300;
+}
+
+.feature-card:hover {
+  @apply border-zinc-600 bg-zinc-900;
+}
+
+/* ── Buttons ── */
+
+.btn {
+  @apply px-6 py-3 rounded-lg font-semibold text-base transition-all duration-200 inline-flex items-center justify-center gap-2 no-underline;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-500;
+}
+
+.btn-secondary {
+  @apply bg-transparent text-zinc-300 border border-zinc-700 hover:border-zinc-500 hover:text-white;
+}
+
+/* ── Badges ── */
+
+.badge {
+  @apply inline-block px-3 py-1 rounded-full text-xs font-medium tracking-wide uppercase;
+}
+
+.badge-primary {
+  @apply bg-blue-500/10 text-blue-400 border border-blue-500/20;
+}
+
+.badge-success {
+  @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+}
+
+.badge-warning {
+  @apply bg-amber-500/10 text-amber-400 border border-amber-500/20;
+}
+
+/* ── Section Labels ── */
+
+.section-label {
+  @apply text-sm font-semibold tracking-widest uppercase text-blue-400 mb-4;
+}
+
+/* ── Docs specific ── */
+
+.docs-content h1 {
+  @apply text-4xl md:text-5xl mb-4;
+}
+
+.docs-content h2 {
+  @apply text-2xl md:text-3xl mt-12 mb-4 pt-8 border-t border-zinc-800;
+}
+
+.docs-content h2:first-of-type {
+  @apply mt-8 border-t-0 pt-0;
+}
+
+.docs-content h3 {
+  @apply text-lg md:text-xl mt-8 mb-3;
+}
+
+.docs-content p {
+  @apply text-zinc-400 leading-relaxed;
+}
+
+.docs-content ul {
+  @apply list-disc;
+}
+
+.docs-content li {
+  @apply text-zinc-400;
+}
+
+/* ── Utility ── */
+
+.text-gradient {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400;
 }
 
 .prose {
   @apply max-w-none;
 }
 
-.feature-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
-}
-
-.feature-card {
-  @apply border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow;
-}
-
 .code-block {
-  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto;
+  @apply bg-zinc-900 text-zinc-300 p-5 rounded-xl overflow-x-auto border border-zinc-800;
 }
 
-.badge {
-  @apply inline-block px-3 py-1 rounded-full text-sm font-medium;
+/* ── Fade in animation (subtle) ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.badge-primary {
-  @apply bg-blue-100 text-blue-700;
-}
-
-.badge-success {
-  @apply bg-green-100 text-green-700;
-}
-
-.badge-warning {
-  @apply bg-yellow-100 text-yellow-700;
-}
-
-.btn {
-  @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-colors;
-}
-
-.btn-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
-}
-
-.btn-secondary {
-  @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }

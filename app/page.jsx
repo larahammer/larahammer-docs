@@ -1,157 +1,150 @@
 import Link from 'next/link'
-import CodeBlock from './components/CodeBlock'
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
-      {/* Hero Section - Extra Dramatic */}
-      <section className="hero-gradient text-white py-40 md:py-56 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{animationDuration: '8s'}}></div>
-          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float" style={{animationDuration: '10s'}}></div>
-          <div className="absolute top-1/2 right-1/3 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-float" style={{animationDuration: '12s'}}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <div className="animate-slide-in-down mb-6 inline-block">
-            <span className="text-7xl">🔨</span>
+    <div>
+      {/* Hero Section */}
+      <section className="hero-gradient py-32 md:py-44 relative">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <div className="mb-6">
+            <span className="badge badge-primary">Laravel CRUD Generator</span>
           </div>
           
-          <h1 className="animate-slide-in-down text-white mb-6 leading-tight" style={{animationDelay: '0.1s'}}>
-            Larahammer
+          <h1 className="text-white mb-6">
+            larahammer
           </h1>
           
-          <p className="animate-fade-in-up text-4xl md:text-5xl font-black mb-8 text-white leading-tight max-w-5xl mx-auto" style={{animationDelay: '0.2s'}}>
-            CRUD Scaffolding<br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 via-cyan-200 to-blue-200">
-              That Saves You Days
-            </span>
+          <p className="text-2xl md:text-3xl font-semibold mb-4 text-zinc-300 max-w-3xl mx-auto leading-snug">
+            Scaffold production-ready CRUD<br />
+            <span className="text-gradient">in a single command.</span>
           </p>
           
-          <p className="animate-fade-in-up text-xl md:text-2xl mb-12 text-blue-100 max-w-3xl mx-auto leading-relaxed" style={{animationDelay: '0.3s'}}>
-            Generate migrations, models, controllers, views, factories, tests, and more with a single command. Production-ready code in seconds, not hours.
+          <p className="text-lg md:text-xl mb-12 text-zinc-500 max-w-2xl mx-auto leading-relaxed">
+            Migrations, models, controllers, views, factories, tests — everything generated and ready to deploy. Stop writing boilerplate.
           </p>
 
-          <div className="flex gap-4 justify-center flex-wrap animate-fade-in-up" style={{animationDelay: '0.4s'}}>
-            <Link href="/docs/getting-started" className="btn btn-primary text-lg font-bold flex items-center gap-2">
-              <span>🚀</span> Start Building
+          <div className="flex gap-4 justify-center flex-wrap mb-16">
+            <Link href="/docs/getting-started" className="btn btn-primary text-base">
+              Get Started
             </Link>
             <a 
               href="https://github.com/larahammer/generator" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="btn btn-secondary text-lg font-bold flex items-center gap-2"
+              className="btn btn-secondary text-base"
             >
-              <span>⭐</span> GitHub
+              View on GitHub
             </a>
           </div>
 
-          <div className="mt-16 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-            <p className="text-blue-200 text-sm mb-4">Trusted by Laravel developers worldwide</p>
-            <div className="flex justify-center gap-8 items-center">
-              <div className="text-center">
-                <div className="text-3xl font-black text-white">10x</div>
-                <p className="text-blue-200 text-sm">Faster Development</p>
+          <div className="max-w-2xl mx-auto">
+            <div className="rounded-xl overflow-hidden border border-zinc-800">
+              <div className="bg-zinc-800/50 text-zinc-500 px-4 py-2 text-xs font-mono border-b border-zinc-800">
+                terminal
               </div>
-              <div className="w-px h-12 bg-blue-300/30"></div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-white">100%</div>
-                <p className="text-blue-200 text-sm">Production Ready</p>
+              <div className="bg-zinc-900 p-5 text-left">
+                <code className="text-sm text-zinc-300 font-mono bg-transparent border-0 p-0">
+                  <span className="text-zinc-500">$</span> php artisan larahammer:make Product name:string price:decimal --all
+                </code>
               </div>
-              <div className="w-px h-12 bg-blue-300/30"></div>
-              <div className="text-center">
-                <div className="text-3xl font-black text-white">0</div>
-                <p className="text-blue-200 text-sm">Configuration</p>
-              </div>
+            </div>
+          </div>
+
+          <div className="mt-16 flex justify-center gap-12 items-center">
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white font-mono">10x</div>
+              <p className="text-zinc-500 text-sm mb-0">Faster</p>
+            </div>
+            <div className="w-px h-10 bg-zinc-800"></div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white font-mono">100%</div>
+              <p className="text-zinc-500 text-sm mb-0">Production Ready</p>
+            </div>
+            <div className="w-px h-10 bg-zinc-800"></div>
+            <div className="text-center">
+              <div className="text-2xl font-bold text-white font-mono">0</div>
+              <p className="text-zinc-500 text-sm mb-0">Config Needed</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Overview - Grid Style */}
-      <section className="py-32 bg-white relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <p className="text-blue-600 text-lg font-bold mb-4">WHY DEVELOPERS LOVE LARAHAMMER</p>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              Build Better. Faster. Smarter.
+      {/* Features Section */}
+      <section className="py-28 bg-zinc-950 border-t border-zinc-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="section-label">Why Larahammer</p>
+            <h2 className="text-white">
+              Build better. Ship faster.
             </h2>
-            <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to scaffold modern Laravel applications in one powerful package
+            <p className="text-lg text-zinc-500 max-w-2xl mx-auto">
+              Everything you need to scaffold modern Laravel applications in one powerful package.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: '⚡', title: 'Lightning Fast', desc: 'Generate complete CRUD in seconds. Save weeks of repetitive work.' },
-              { icon: '🎯', title: 'Pick Your Stack', desc: 'Blade, Filament, REST APIs, or all three. Full control over your targets.' },
-              { icon: '📦', title: 'Everything Included', desc: 'Migrations, models, controllers, views, factories, tests, and more.' },
-              { icon: '🔒', title: 'Security Built-In', desc: 'Policies, RBAC, API auth, and authorization out of the box.' },
-              { icon: '📊', title: 'Audit Logging', desc: 'Track every change with activity logging observers.' },
-              { icon: '✨', title: 'Best Practices', desc: 'Clean code following Laravel conventions and industry standards.' },
+              { title: 'Lightning Fast', desc: 'Generate complete CRUD in seconds. Save weeks of repetitive boilerplate work.' },
+              { title: 'Pick Your Stack', desc: 'Blade, Filament, REST APIs, or all three. Full control over your targets.' },
+              { title: 'Everything Included', desc: 'Migrations, models, controllers, views, factories, tests — all generated.' },
+              { title: 'Security Built-In', desc: 'Policies, RBAC, API auth, and authorization configured out of the box.' },
+              { title: 'Audit Logging', desc: 'Track every change with observer-based activity logging.' },
+              { title: 'Best Practices', desc: 'Clean code following Laravel conventions and industry standards.' },
             ].map((feature, idx) => (
               <div 
                 key={idx}
-                className="feature-card group"
-                style={{animationDelay: `${idx * 0.1}s`}}
+                className="feature-card"
               >
-                <div className="text-6xl mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600 text-lg leading-relaxed">{feature.desc}</p>
+                <h3 className="text-lg font-semibold mb-3 text-white">{feature.title}</h3>
+                <p className="text-zinc-500 text-sm leading-relaxed mb-0">{feature.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Quick Start - Bold Design */}
-      <section className="py-32 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <p className="text-blue-600 text-lg font-bold mb-4">GET STARTED IN 3 STEPS</p>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900">
-              No Configuration Needed
+      {/* Quick Start Section */}
+      <section className="py-28 bg-zinc-900/30 border-t border-zinc-800/50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="section-label">Get Started in 3 Steps</p>
+            <h2 className="text-white">
+              No configuration needed.
             </h2>
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {[
               {
-                step: '1',
-                title: 'Install the Package',
+                step: '01',
+                title: 'Install the package',
                 code: 'composer require larahammer/generator',
-                color: 'from-blue-600 to-cyan-600'
               },
               {
-                step: '2',
-                title: 'Generate Your CRUD',
+                step: '02',
+                title: 'Generate your CRUD',
                 code: 'php artisan larahammer:make Product name:string price:decimal --all',
-                color: 'from-purple-600 to-pink-600'
               },
               {
-                step: '3',
-                title: 'Run Migrations',
+                step: '03',
+                title: 'Run migrations',
                 code: 'php artisan migrate',
-                color: 'from-pink-600 to-red-600'
               }
             ].map((item, idx) => (
               <div 
                 key={idx}
-                className={`bg-gradient-to-r ${item.color} rounded-2xl p-10 text-white shadow-2xl hover:shadow-3xl transition-shadow duration-300`}
-                style={{animationDelay: `${idx * 0.15}s`}}
+                className="bg-zinc-900/80 rounded-xl p-8 border border-zinc-800 hover:border-zinc-700 transition-colors"
               >
-                <div className="flex items-start gap-8">
+                <div className="flex items-start gap-6">
                   <div className="flex-shrink-0">
-                    <div className="flex items-center justify-center h-16 w-16 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30">
-                      <span className="text-3xl font-black">{item.step}</span>
-                    </div>
+                    <span className="text-zinc-600 font-mono text-sm font-bold">{item.step}</span>
                   </div>
                   <div className="flex-grow">
-                    <h3 className="text-3xl font-bold mb-4">{item.title}</h3>
-                    <div className="bg-black/30 rounded-xl p-4 backdrop-blur-sm border border-white/10">
-                      <code className="text-white font-mono text-lg">{item.code}</code>
+                    <h3 className="text-lg font-semibold mb-3 text-white">{item.title}</h3>
+                    <div className="bg-zinc-950 rounded-lg p-4 border border-zinc-800">
+                      <code className="text-zinc-300 font-mono text-sm bg-transparent border-0 p-0">
+                        <span className="text-zinc-600">$</span> {item.code}
+                      </code>
                     </div>
                   </div>
                 </div>
@@ -159,55 +152,50 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-16 p-10 bg-blue-50 border-2 border-blue-200 rounded-2xl text-center">
-            <p className="text-2xl font-black text-blue-900 mb-4">✨ That's It!</p>
-            <p className="text-lg text-blue-800">
-              Your complete CRUD application with migrations, models, controllers, views, factories, tests, and everything else is ready to deploy.
+          <div className="mt-8 p-6 bg-zinc-900/50 border border-zinc-800 rounded-xl text-center">
+            <p className="text-lg font-semibold text-zinc-300 mb-2">That's it.</p>
+            <p className="text-zinc-500 mb-0">
+              Your complete CRUD application with migrations, models, controllers, views, factories, and tests is ready to deploy.
             </p>
           </div>
         </div>
       </section>
 
       {/* What's Included */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <p className="text-blue-600 text-lg font-bold mb-4">COMPLETE TOOLKIT</p>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-6">
-              Everything Out of the Box
+      <section className="py-28 bg-zinc-950 border-t border-zinc-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="section-label">Complete Toolkit</p>
+            <h2 className="text-white">
+              Everything out of the box.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                icon: '📋',
                 title: 'Core Files',
-                items: ['Database migration', 'Eloquent model', 'Form request validation', 'Database seeder', 'Routes']
+                items: ['Database migration', 'Eloquent model', 'Form request validation', 'Database seeder', 'Route definitions']
               },
               {
-                icon: '🎨',
                 title: 'Views & Controllers',
                 items: ['Blade views (CRUD)', 'Filament resource', 'REST API controller', 'Error handling', 'JSON resources']
               },
               {
-                icon: '🔐',
                 title: 'Security & Auth',
                 items: ['Authorization policies', 'Role-based access', 'API authentication', 'Admin protection', 'CSRF tokens']
               },
               {
-                icon: '🧪',
                 title: 'Testing & More',
                 items: ['Model factories', 'Feature tests', 'Activity logging', 'Soft deletes', 'Event listeners']
               }
             ].map((section, idx) => (
-              <div key={idx} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-10 border border-gray-200 hover:shadow-2xl transition-all">
-                <div className="text-5xl mb-6">{section.icon}</div>
-                <h3 className="text-3xl font-bold mb-6 text-gray-900">{section.title}</h3>
-                <ul className="space-y-4">
+              <div key={idx} className="bg-zinc-900/50 rounded-xl p-8 border border-zinc-800">
+                <h3 className="text-xl font-bold mb-5 text-white">{section.title}</h3>
+                <ul className="space-y-3 list-none ml-0">
                   {section.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-gray-700 text-lg">
-                      <span className="text-2xl font-bold text-blue-600">✓</span>
+                    <li key={i} className="flex items-center gap-3 text-zinc-400 text-sm mb-0">
+                      <span className="text-blue-400 text-xs">&#10003;</span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -219,58 +207,54 @@ export default function Home() {
       </section>
 
       {/* Flags & Options */}
-      <section className="py-32 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <p className="text-blue-600 text-lg font-bold mb-4">POWERFUL OPTIONS</p>
-            <h2 className="text-5xl md:text-6xl font-black text-gray-900">
-              Customize Everything
+      <section className="py-28 bg-zinc-900/30 border-t border-zinc-800/50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="section-label">Powerful Options</p>
+            <h2 className="text-white">
+              Customize everything.
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-blue-900 rounded-2xl p-10 text-white">
-              <h3 className="text-3xl font-bold mb-8">🎯 UI Targets</h3>
-              <div className="space-y-4">
-                <div className="bg-blue-800/50 rounded-lg p-4 border border-blue-400/30 font-mono text-lg">--target=blade</div>
-                <div className="bg-blue-800/50 rounded-lg p-4 border border-blue-400/30 font-mono text-lg">--target=filament</div>
-                <div className="bg-blue-800/50 rounded-lg p-4 border border-blue-400/30 font-mono text-lg">--target=api</div>
-                <div className="bg-blue-800/50 rounded-lg p-4 border border-blue-400/30 font-mono text-lg">--target=all</div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-zinc-900/80 rounded-xl p-8 border border-zinc-800">
+              <h3 className="text-xl font-bold mb-6 text-white">UI Targets</h3>
+              <div className="space-y-3">
+                <div className="bg-zinc-950 rounded-lg p-3 border border-zinc-800 font-mono text-sm text-zinc-400">--target=blade</div>
+                <div className="bg-zinc-950 rounded-lg p-3 border border-zinc-800 font-mono text-sm text-zinc-400">--target=filament</div>
+                <div className="bg-zinc-950 rounded-lg p-3 border border-zinc-800 font-mono text-sm text-zinc-400">--target=api</div>
+                <div className="bg-zinc-950 rounded-lg p-3 border border-zinc-800 font-mono text-sm text-zinc-400">--target=all</div>
               </div>
             </div>
 
-            <div className="bg-purple-900 rounded-2xl p-10 text-white">
-              <h3 className="text-3xl font-bold mb-8">⚙️ Advanced Features</h3>
-              <div className="space-y-4">
-                <div className="bg-purple-800/50 rounded-lg p-4 border border-purple-400/30 font-mono text-lg">--with-roles</div>
-                <div className="bg-purple-800/50 rounded-lg p-4 border border-purple-400/30 font-mono text-lg">--with-admin</div>
-                <div className="bg-purple-800/50 rounded-lg p-4 border border-purple-400/30 font-mono text-lg">--with-factories</div>
-                <div className="bg-purple-800/50 rounded-lg p-4 border border-purple-400/30 font-mono text-lg">--all (everything!)</div>
+            <div className="bg-zinc-900/80 rounded-xl p-8 border border-zinc-800">
+              <h3 className="text-xl font-bold mb-6 text-white">Advanced Features</h3>
+              <div className="space-y-3">
+                <div className="bg-zinc-950 rounded-lg p-3 border border-zinc-800 font-mono text-sm text-zinc-400">--with-roles</div>
+                <div className="bg-zinc-950 rounded-lg p-3 border border-zinc-800 font-mono text-sm text-zinc-400">--with-admin</div>
+                <div className="bg-zinc-950 rounded-lg p-3 border border-zinc-800 font-mono text-sm text-zinc-400">--with-factories</div>
+                <div className="bg-zinc-950 rounded-lg p-3 border border-zinc-800 font-mono text-sm text-zinc-400">--all</div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA - Dramatic */}
-      <section className="hero-gradient text-white py-40 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-float"></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-5xl md:text-6xl font-black mb-8 text-white">
-            Stop Scaffolding Manually
+      {/* Final CTA */}
+      <section className="hero-gradient py-28 relative border-t border-zinc-800/50">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
+            Stop scaffolding manually.
           </h2>
-          <p className="text-2xl text-blue-100 mb-12 max-w-3xl mx-auto">
-            Join hundreds of Laravel developers who are shipping 10x faster with Larahammer
+          <p className="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto">
+            Join hundreds of Laravel developers shipping 10x faster with Larahammer.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/docs/getting-started" className="btn btn-primary text-xl font-bold">
-              🚀 Start Now
+            <Link href="/docs/getting-started" className="btn btn-primary">
+              Get Started
             </Link>
-            <Link href="/docs/features" className="btn btn-secondary text-xl font-bold">
-              📚 Learn More
+            <Link href="/docs/features" className="btn btn-secondary">
+              Explore Features
             </Link>
           </div>
         </div>
