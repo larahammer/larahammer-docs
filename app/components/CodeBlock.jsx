@@ -1,3 +1,5 @@
+'use client'
+
 export default function CodeBlock({ code, language = 'bash' }) {
   return (
     <div className="my-4 rounded-lg overflow-hidden">
