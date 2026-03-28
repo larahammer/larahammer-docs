@@ -59,9 +59,9 @@ export default function GettingStarted() {
         <li><strong>List:</strong> <code>GET /products</code></li>
         <li><strong>Create:</strong> <code>GET /products/create</code></li>
         <li><strong>Store:</strong> <code>POST /products</code></li>
-        <li><strong>Edit:</strong> <code>GET /products/{{id}}/edit</code></li>
-        <li><strong>Update:</strong> <code>PUT /products/{{id}}</code></li>
-        <li><strong>Delete:</strong> <code>DELETE /products/{{id}}</code></li>
+        <li><strong>Edit:</strong> <code>GET /products/{"{id}"}/edit</code></li>
+        <li><strong>Update:</strong> <code>PUT /products/{"{id}"}</code></li>
+        <li><strong>Delete:</strong> <code>DELETE /products/{"{id}"}</code></li>
       </ul>
 
       <h3>Filament Admin</h3>
@@ -71,9 +71,9 @@ export default function GettingStarted() {
       <ul>
         <li><strong>List:</strong> <code>GET /api/products</code></li>
         <li><strong>Create:</strong> <code>POST /api/products</code></li>
-        <li><strong>Show:</strong> <code>GET /api/products/{{id}}</code></li>
-        <li><strong>Update:</strong> <code>PUT /api/products/{{id}}</code></li>
-        <li><strong>Delete:</strong> <code>DELETE /api/products/{{id}}</code></li>
+        <li><strong>Show:</strong> <code>GET /api/products/{"{id}"}</code></li>
+        <li><strong>Update:</strong> <code>PUT /api/products/{"{id}"}</code></li>
+        <li><strong>Delete:</strong> <code>DELETE /api/products/{"{id}"}</code></li>
       </ul>
 
       <h2>Configuration</h2>
