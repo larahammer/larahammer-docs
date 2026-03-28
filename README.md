@@ -6,7 +6,7 @@ Modern, comprehensive documentation site for the Larahammer Generator Laravel pa
 
 This is the official documentation website for [Larahammer Generator](https://github.com/larahammer/generator), a complete CRUD scaffolding package for Laravel that generates migrations, models, controllers, views, factories, tests, and more from a single command.
 
-**Live Site:** [docs.larahammer.dev](https://docs.larahammer.dev)
+**Live Site:** [docs.larahammer.dev](https://larahammer-docs.vercel.app/)
 
 ## 🏗️ Built With
 
