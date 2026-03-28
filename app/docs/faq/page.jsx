@@ -1,4 +1,4 @@
-import CodeBlock from '@/app/components/CodeBlock'
+import CodeBlock from '@/app/components/CodeBlock.jsx'
 import Link from 'next/link'
 
 export const metadata = {
